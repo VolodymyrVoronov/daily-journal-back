@@ -59,9 +59,9 @@ const updateJournal = (journal: {
 };
 
 export {
-  findAllJournals,
   createJournal,
   deleteJournal,
+  findAllJournals,
   toggleFavoriteJournal,
   updateJournal,
 };

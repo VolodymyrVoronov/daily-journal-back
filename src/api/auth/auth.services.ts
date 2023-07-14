@@ -50,6 +50,8 @@ const revokeTokens = (userId: string) => {
 };
 
 export {
-  addRefreshTokenWhiteList, deleteRefreshToken, findRefreshTokenById, revokeTokens
+  addRefreshTokenWhiteList,
+  deleteRefreshToken,
+  findRefreshTokenById,
+  revokeTokens,
 };
-
