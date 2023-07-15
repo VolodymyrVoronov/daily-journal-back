@@ -13,9 +13,9 @@ const router = express.Router();
 router.get("/all", async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userId = req.payload.userId;
-    const { date } = req.body;
+    const { year, month, day } = req.body;
 
-    const journals = await findAllJournals(userId, date);
+    const journals = await findAllJournals(userId, year, month, day);
 
     if (journals) {
       res.json(journals);
@@ -34,12 +34,14 @@ router.post(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const userId = req.payload.userId;
-      const { title, text, date, favorite } = req.body;
+      const { title, text, year, month, day, favorite } = req.body;
 
       await createJournal({
         title,
         text,
-        date,
+        year,
+        month,
+        day,
         favorite,
         userId,
       });

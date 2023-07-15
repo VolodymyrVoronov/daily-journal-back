@@ -1,10 +1,17 @@
 import db from "../../utils/db";
 
-const findAllJournals = (userId: string, date: Date) => {
+const findAllJournals = (
+  userId: string,
+  year: number,
+  month: number,
+  day: number
+) => {
   return db.journal.findMany({
     where: {
       userId: userId,
-      date: date,
+      year: year,
+      month: month,
+      day: day,
     },
   });
 };
@@ -12,7 +19,9 @@ const findAllJournals = (userId: string, date: Date) => {
 const createJournal = (journal: {
   title: string;
   text: string;
-  date: Date;
+  year: number;
+  month: number;
+  day: number;
   favorite: boolean;
   userId: string;
 }) => {
