@@ -1,9 +1,10 @@
 import db from "../../utils/db";
 
-const findAllJournals = (userId: string) => {
+const findAllJournals = (userId: string, date: Date) => {
   return db.journal.findMany({
     where: {
       userId: userId,
+      date: date,
     },
   });
 };
