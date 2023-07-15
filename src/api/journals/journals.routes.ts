@@ -13,8 +13,9 @@ const router = express.Router();
 router.get("/all", async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userId = req.payload.userId;
+    const { date } = req.body;
 
-    const journals = await findAllJournals(userId);
+    const journals = await findAllJournals(userId, date);
 
     if (journals) {
       res.json(journals);
