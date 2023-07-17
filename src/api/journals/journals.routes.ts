@@ -12,10 +12,17 @@ const router = express.Router();
 
 router.get("/all", async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const userId = req.payload.userId;
-    const { year, month, day } = req.body;
+    const { userId } = req.payload;
+    const { year, month, day } = req.query;
 
-    const journals = await findAllJournals(userId, year, month, day);
+    console.log(userId, year, month, day);
+
+    const journals = await findAllJournals(
+      userId,
+      Number(year),
+      Number(month),
+      Number(day)
+    );
 
     if (journals) {
       res.json(journals);
