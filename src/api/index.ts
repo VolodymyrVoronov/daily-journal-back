@@ -3,8 +3,8 @@ import express from "express";
 import isAuthenticated from "../middlewares/is-authenticated";
 
 import auth from "./auth/auth.routes";
-import users from "./users/users.routes";
 import journals from "./journals/journals.routes";
+import users from "./users/users.routes";
 
 const router = express.Router();
 

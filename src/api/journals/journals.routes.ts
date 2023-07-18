@@ -1,9 +1,9 @@
 import express, { NextFunction, Request, Response } from "express";
 
 import {
-  findAllJournals,
   createJournal,
   deleteJournal,
+  findAllJournals,
   toggleFavoriteJournal,
   updateJournal,
 } from "./journals.services";
