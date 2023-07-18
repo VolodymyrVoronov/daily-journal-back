@@ -40,7 +40,7 @@ router.post(
   "/create",
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const userId = req.payload.userId;
+      const { userId } = req.payload;
       const { title, text, year, month, day, favorite } = req.body;
 
       await createJournal({
